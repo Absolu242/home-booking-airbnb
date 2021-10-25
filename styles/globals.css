@@ -17,8 +17,14 @@ a {
   text-decoration: none;
 }
 
+input{
+  outline:none
+}
+
 button {
   cursor: pointer;
+  border:none;
+  background: none;
 }
 
 * {
