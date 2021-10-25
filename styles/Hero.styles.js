@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 `;
 

@@ -1,4 +1,6 @@
 import Layout from "../components/Layout";
+import ShowcaseList from "../components/ShowcaseList";
+import { datalist } from "../data";
 import {
   HeroContent,
   HeroLeft,
@@ -58,6 +60,11 @@ export default function Home() {
             </HeroRight>
           </HeroContent>
         </HeroSection>
+        <>
+          {datalist.map((list, i) => (
+            <ShowcaseList list={list} key={i} />
+          ))}
+        </>
       </Layout>
     </>
   );
