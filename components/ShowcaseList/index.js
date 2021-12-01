@@ -105,7 +105,7 @@ export default function ShowcaseList({ list }) {
         <ShowcaseItems>
           {data.map((item, i) => (
             <ShowcaseItem key={i}>
-              <Link href={`room/${item.id}/?city=${location.city}`}>
+              <Link href={`/room/${item.id}/?city=${location.city}`}>
                 <a>
                   <img src={item.image} alt="item" className="item-img" />
                 </a>
