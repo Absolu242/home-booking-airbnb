@@ -1,5 +1,7 @@
+import { useRouter } from "next/dist/client/router";
 import React from "react";
 import Layout from "../../components/Layout";
+import { datalist } from "../../data";
 import {
   RoomBooking,
   RoomContainer,
@@ -9,11 +11,20 @@ import {
   RoomLayoutGrid,
 } from "../../styles/Room.styles";
 export default function Room() {
+  const router = useRouter();
+  const { city, roomId } = router.query;
+
+  let data = datalist.filter((item) => item.location.city === city)[0];
+
+  let room = data.data.filter((el) => el.id === parseInt(roomId))[0];
+
+  console.log(room);
+
   return (
     <Layout>
       <RoomHero>
         <div className="hero-image">
-          <img src="/hero.jpg" alt="hero" />
+          <img src={room.image} alt="hero" />
           <div className="hero-action">
             <button>Share</button>
             <button>Save</button>
@@ -27,14 +38,16 @@ export default function Room() {
               <div className="roomInfo-top">
                 <div>
                   <p className="label">Entier Appartement</p>
-                  <h1 className="title">Lorem ipsum dolor sit amet.</h1>
+                  <h1 className="title">{room.name}</h1>
                 </div>
 
                 <div className="user">
                   <div className="info">
                     <span className="username">Amber Hudson</span>
                     <br />
-                    <span className="location">Los Angeles ,CA</span>
+                    <span className="location">
+                      {data.location.city},{data.location.country}
+                    </span>
                   </div>
                   <div className="user-img">
                     <img src="/User.png" alt="user" />
@@ -104,7 +117,7 @@ export default function Room() {
                 <p className="card-label">Reviews</p>
                 <div className="card-main">
                   <div className="reviews-number">
-                    <h2>185 Reviews</h2> <span>🔥 5.0</span>
+                    <h2>185 Reviews</h2> <span>🔥{room.rating}</span>
                   </div>
                   <div className="reviews-list">
                     <div className="review-item">

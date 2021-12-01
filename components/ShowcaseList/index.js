@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ShowcaseContainer = styled.div`
   position: relative;
   width: 100%;
+  padding: 0 1rem;
 `;
 
 const ShowcaseContent = styled.div`
@@ -42,6 +43,10 @@ const ShowcaseItems = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ShowcaseItem = styled.div`
@@ -88,7 +93,7 @@ export default function ShowcaseList({ list }) {
         <ShowcaseTop>
           <p>
             <span>Apartments in </span>
-            {location}
+            {location.city}, {location.country}
           </p>
 
           <span className="more">
@@ -100,7 +105,7 @@ export default function ShowcaseList({ list }) {
         <ShowcaseItems>
           {data.map((item, i) => (
             <ShowcaseItem key={i}>
-              <Link href="/">
+              <Link href={`room/${item.id}/?city=${location.city}`}>
                 <a>
                   <img src={item.image} alt="item" className="item-img" />
                 </a>

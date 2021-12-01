@@ -19,6 +19,11 @@ const FooterContent = styled.div`
   justify-content: space-between;
   align-items: center;
   border: solid 1px #d9dde7;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    padding: 2rem;
+  }
 `;
 
 const FooterLeft = styled.div`
@@ -74,6 +79,7 @@ const FooterRight = styled.div`
   display: flex;
   width: 70%;
   justify-content: space-evenly;
+  height: 100%;
   .footerList {
     list-style: none;
   }
@@ -92,6 +98,12 @@ const FooterRight = styled.div`
     &:hover {
       color: #25df8f;
     }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 2rem;
   }
 `;
 

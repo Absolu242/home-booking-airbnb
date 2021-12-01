@@ -4,6 +4,8 @@ export const HeroSection = styled.section`
   position: relative;
   width: 100%;
   background-color: #fff;
+
+  padding: 0 1rem;
 `;
 
 export const HeroContent = styled.div`
@@ -68,6 +70,7 @@ export const HeroLeft = styled.div`
       border-radius: 5px;
       padding: 0.8rem 1rem;
       margin-right: 0.8rem;
+      margin-bottom: 0.5rem;
 
       &:hover,
       &.active {
@@ -105,5 +108,9 @@ export const HeroRight = styled.div`
       padding-left: 1rem;
       font-size: 1.3rem;
     }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;

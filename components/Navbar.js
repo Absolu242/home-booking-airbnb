@@ -7,6 +7,8 @@ const NavContainer = styled.div`
   width: 100%;
   box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+
+  padding: 0 1rem;
 `;
 
 const NavContent = styled.div`
@@ -18,12 +20,17 @@ const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 const NavLeft = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 
   .nav-logo {
     img {
@@ -51,6 +58,15 @@ const NavLeft = styled.div`
       right: 1rem;
     }
   }
+
+  @media (max-width: 768px) {
+    .nav-searchbar {
+      input {
+        width: 100%;
+        padding-right: 4rem;
+      }
+    }
+  }
 `;
 
 const NavRight = styled.div`
@@ -62,7 +78,7 @@ const NavRight = styled.div`
 
   .navItem {
     font-size: 1.3rem;
-    padding: 0 1rem;
+    padding-right: 1rem;
   }
 
   .navLink {
@@ -79,7 +95,11 @@ export default function Navbar() {
       <NavContent>
         <NavLeft>
           <div className="nav-logo">
-            <img src="/logo.png" alt="logo" />
+            <Link href="/">
+              <a>
+                <img src="/logo.png" alt="logo" />
+              </a>
+            </Link>
           </div>
 
           <div className="nav-searchbar">

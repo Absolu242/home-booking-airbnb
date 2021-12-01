@@ -1,6 +1,9 @@
 export const datalist = [
   {
-    location: "barcelona, spain",
+    location: {
+      city: " barcelona",
+      country: " spain",
+    },
     data: [
       {
         id: 1,
@@ -33,7 +36,10 @@ export const datalist = [
     ],
   },
   {
-    location: "copenhagen, denmark",
+    location: {
+      city: " copenhagen",
+      country: " denmark",
+    },
     data: [
       {
         id: 1,

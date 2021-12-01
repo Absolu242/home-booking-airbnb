@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "../components/Layout";
 import ShowcaseList from "../components/ShowcaseList";
 import { datalist } from "../data";
@@ -12,6 +13,9 @@ export default function Home() {
   return (
     <>
       <Layout>
+        <Head>
+          <title>Airbnb Clone</title>
+        </Head>
         <HeroSection>
           <HeroContent>
             <HeroLeft>

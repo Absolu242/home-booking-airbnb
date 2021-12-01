@@ -13,7 +13,7 @@ export const RoomHero = styled.div`
     height: 100%;
     img {
       width: 100%;
-      height: 90vh;
+      height: inherit;
     }
   }
 
@@ -30,11 +30,16 @@ export const RoomHero = styled.div`
       color: #fff;
     }
   }
+
+  @media (max-width: 768px) {
+    height: 40vh;
+  }
 `;
 
 export const RoomContainer = styled.div`
   position: relative;
   width: 100%;
+  padding: 0 1rem;
 `;
 
 export const RoomContent = styled.div`
@@ -50,6 +55,10 @@ export const RoomLayoutGrid = styled.div`
   width: 100%;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const RoomInfo = styled.div`
@@ -69,6 +78,10 @@ export const RoomInfo = styled.div`
       font-size: 2.4rem;
       font-weight: 400;
       padding: 1rem 0;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
 
     .user {
@@ -85,6 +98,7 @@ export const RoomInfo = styled.div`
         .location {
           font-size: 1.2rem;
           color: #949fb7;
+          text-transform: capitalize;
         }
       }
     }
